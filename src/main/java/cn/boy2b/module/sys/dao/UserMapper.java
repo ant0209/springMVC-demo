@@ -1,6 +1,6 @@
-package cn.boy2b.module.admin.dao;
+package cn.boy2b.module.sys.dao;
 
-import cn.boy2b.module.admin.vo.UserVO;
+import cn.boy2b.module.sys.vo.UserVO;
 
 import java.util.List;
 

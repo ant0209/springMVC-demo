@@ -1,4 +1,4 @@
-package cn.boy2b.module.admin.controller;
+package cn.boy2b.module.sys.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

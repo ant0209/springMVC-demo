@@ -1,7 +1,7 @@
-package cn.boy2b.module.admin.service;
+package cn.boy2b.module.sys.service;
 
-import cn.boy2b.module.admin.dao.UserMapper;
-import cn.boy2b.module.admin.vo.UserVO;
+import cn.boy2b.module.sys.dao.UserMapper;
+import cn.boy2b.module.sys.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

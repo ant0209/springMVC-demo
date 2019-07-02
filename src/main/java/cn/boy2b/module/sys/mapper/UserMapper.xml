@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.boy2b.module.admin.dao.UserMapper">
+<mapper namespace="cn.boy2b.module.sys.dao.UserMapper">
 
-    <insert id="add" parameterType="cn.boy2b.module.admin.vo.UserVO">
+    <insert id="add" parameterType="cn.boy2b.module.sys.vo.UserVO">
         insert into t_user(id, name, password)
         values(#{id}, #{name}, #{password})
     </insert>
-    <update id="update" parameterType="cn.boy2b.module.admin.vo.UserVO">
+    <update id="update" parameterType="cn.boy2b.module.sys.vo.UserVO">
         update t_user set name = #{name}, password = #{password}
         where id = #{id}
     </update>
-    <select id="queryAllUser" resultType="cn.boy2b.module.admin.vo.UserVO">
+    <select id="queryAllUser" resultType="cn.boy2b.module.sys.vo.UserVO">
         select * from t_user
     </select>
 

@@ -1,7 +1,7 @@
 package cn.boy2b.module.common;
 
 import cn.boy2b.module.BaseTest;
-import cn.boy2b.module.admin.entity.UserEntity;
+import cn.boy2b.module.sys.entity.UserEntity;
 import cn.boy2b.module.common.hibernate.Dao;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;

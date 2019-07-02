@@ -1,8 +1,8 @@
-package cn.boy2b.module.admin;
+package cn.boy2b.module.sys;
 
 import cn.boy2b.module.BaseTest;
-import cn.boy2b.module.admin.service.UserService;
-import cn.boy2b.module.admin.vo.UserVO;
+import cn.boy2b.module.sys.service.UserService;
+import cn.boy2b.module.sys.vo.UserVO;
 import com.alibaba.fastjson.JSONObject;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;

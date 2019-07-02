@@ -1,25 +1,25 @@
-package cn.boy2b.module.admin.entity;
-
-import cn.boy2b.module.common.entity.IdEntity;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+package cn.boy2b.module.sys.vo;
 
 /**
  * @author zhouwei
- * @desc UserEntity
- * @date 2019-6-27 18:13
+ * @desc UserVO
+ * @date 2019-6-26 13:53
  */
-@Entity
-@Table(name = "t_user")
-public class UserEntity extends IdEntity {
+public class UserVO {
 
-    @Column(name = "name")
+    private String id;
+
     private String name;
 
-    @Column(name = "password")
     private String password;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
