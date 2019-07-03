@@ -1,19 +1,26 @@
-package cn.boy2b.module.common.hibernate;
+package cn.boy2b.module.common;
 
 import cn.boy2b.common.BizException;
 import cn.boy2b.module.common.entity.IdEntity;
+import cn.boy2b.module.common.entity.StatusEntity;
 import org.apache.commons.lang.StringUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
+
 /**
+ * @desc 公用的DAO
  * @author zhouwei
- * @desc Dao
  * @date 2019-6-27 17:37
  */
 @Repository
 public class Dao {
+
+    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private HibernateTemplate hibernateTemplate;
@@ -26,7 +33,12 @@ public class Dao {
      *@date 2019-6-27 18:07
      */
     public <T extends IdEntity> T get(Class<T> clazz, String id) {
-        return hibernateTemplate.get(clazz, id);
+        try {
+            return hibernateTemplate.get(clazz, id);
+        }
+        catch (Exception e) {
+            throw new BizException("根据ID获取对象异常", e);
+        }
     }
 
     /**
@@ -43,7 +55,14 @@ public class Dao {
                 return (String)hibernateTemplate.save(entity);
             }
             else {
-                hibernateTemplate.update(entity);
+                if (entity instanceof StatusEntity) {
+                    StatusEntity statusEntity = (StatusEntity)entity;
+                    statusEntity.setUpdateTime(new Date());
+                    hibernateTemplate.update(statusEntity);
+                }
+                else {
+                    hibernateTemplate.update(entity);
+                }
                 return id;
             }
         }
