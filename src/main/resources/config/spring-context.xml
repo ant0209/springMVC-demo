@@ -16,10 +16,11 @@
 	<mvc:annotation-driven />
 
 	<!-- 访问静态资源 -->
-	<mvc:resources location="/css/" mapping="/css/**"/>
-	<mvc:resources location="/images/" mapping="/images/**"/>
-	<mvc:resources location="/js/" mapping="/js/**"/>
-	<mvc:resources mapping="/favicon.ico" location="/favicon.ico"/>
+	<mvc:resources location="/css/**" mapping="/css"/>
+	<mvc:resources location="/images/**" mapping="/images"/>
+	<mvc:resources location="/js/**" mapping="/js"/>
+	<mvc:resources location="/datas/**" mapping="/datas"/>
+	<mvc:resources location="/plugins/**" mapping="/plugins"/>
 
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
