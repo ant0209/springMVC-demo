@@ -14,13 +14,8 @@
 	<context:component-scan base-package="cn.boy2b.module" />
 	<!-- 配置注解的处理器映射器和处理器适配器 -->
 	<mvc:annotation-driven />
+	<mvc:default-servlet-handler/>
 
-	<!-- 访问静态资源 -->
-	<mvc:resources location="/css/**" mapping="/css"/>
-	<mvc:resources location="/images/**" mapping="/images"/>
-	<mvc:resources location="/js/**" mapping="/js"/>
-	<mvc:resources location="/datas/**" mapping="/datas"/>
-	<mvc:resources location="/plugins/**" mapping="/plugins"/>
 
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
