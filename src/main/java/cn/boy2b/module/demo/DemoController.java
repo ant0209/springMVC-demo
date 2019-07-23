@@ -18,4 +18,10 @@ public class DemoController {
         ModelAndView view = new ModelAndView("demo/index");
         return view;
     }
+
+    @RequestMapping(value = "/main")
+    public ModelAndView main() {
+        ModelAndView view = new ModelAndView("demo/main");
+        return view;
+    }
 }
