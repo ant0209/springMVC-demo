@@ -16,6 +16,8 @@
 	<mvc:annotation-driven />
 	<mvc:default-servlet-handler/>
 
+	<!--针对特殊的静态文件,可以增加mvc:resources的配置-->
+	<mvc:resources mapping="/demo/datas/**" location="/static/datas/" />
 
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
