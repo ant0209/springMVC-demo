@@ -11,9 +11,9 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="format-detection" content="telephone=no">
 
-		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
-		<link rel="stylesheet" href="css/global.css" media="all">
-		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../static/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../static/css/global.css" media="all">
+		<link rel="stylesheet" href="../../static/plugins/font-awesome/css/font-awesome.min.css">
 	</head>
 
 	<body>
@@ -30,7 +30,7 @@
 						&lt;div id=&quot;nav&quot; lay-filter=&quot;demo&quot;&gt;&lt;/div&gt;
 						//js
 						layui.config({
-						    base: 'js/'
+						    base: '../../static/js/'
 						}).use('navbar', function() {
 						    var navbar = layui.navbar();
 						    navbar.set({
@@ -271,7 +271,7 @@
 						            {
 						                "title": "表单",
 						                "icon": "&#xe62a;",
-						                "href": "form.html"
+						                "href": "../../demo/form"
 						            }
 						            //...
 						        ]   
@@ -309,10 +309,10 @@
 				</div>
 			</fieldset>
 		</div>
-		<script type="text/javascript" src="plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../static/plugins/layui/layui.js"></script>
 		<script>
 			layui.config({
-				base: 'js/'
+				base: '../../static/js/'
 			}).use(['navbar', 'code'], function() {
 				var navbar = layui.navbar(),
 					layer = parent.layer === undefined ? layui.layer : parent.layer,

@@ -11,9 +11,9 @@
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="format-detection" content="telephone=no">
 
-		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
-		<link rel="stylesheet" href="css/global.css" media="all">
-		<link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+		<link rel="stylesheet" href="../../static/plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="../../static/css/global.css" media="all">
+		<link rel="stylesheet" href="../../static/plugins/font-awesome/css/font-awesome.min.css">
 	</head>
 
 	<body>
@@ -59,7 +59,7 @@
 					<pre class="layui-code">
 						//示例代码
 						layui.config({
-    base: 'js/'
+    base: '../../static/js/'
 }).use(['paging', 'code'], function() {
     layui.code();
     var $ = layui.jquery,
@@ -309,10 +309,10 @@
 			</tr>
 			{{# }); }}
 		</script>
-		<script type="text/javascript" src="plugins/layui/layui.js"></script>
+		<script type="text/javascript" src="../../static/plugins/layui/layui.js"></script>
 		<script>
 			layui.config({
-				base: 'js/'
+				base: '../../static/js/'
 			}).use(['paging', 'code'], function() {
 				layui.code();
 				var $ = layui.jquery,

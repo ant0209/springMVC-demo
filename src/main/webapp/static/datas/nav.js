@@ -5,15 +5,18 @@ var navs = [{
 	"children": [{
 		"title": "按钮",
 		"icon": "&#xe641;",
-		"href": "button.html"
+		// "href": "button.html"
+		"href": "../../demo/button"
 	}, {
 		"title": "表单",
 		"icon": "&#xe63c;",
-		"href": "form.html"
+		// "href": "form.html"
+		"href": "../../demo/form"
 	}, {
 		"title": "表格",
 		"icon": "&#xe63c;",
-		"href": "table.html"
+		// "href": "table.html"
+		"href": "../../demo/table"
 	}, {
 		"title": "导航",
 		"icon": "&#xe609;",
@@ -21,7 +24,8 @@ var navs = [{
 	}, {
 		"title": "辅助性元素",
 		"icon": "&#xe60c;",
-		"href": "auxiliar.html"
+		// "href": "auxiliar.html"
+		"href": "../../demo/auxiliar"
 	}]
 }, {
 	"title": "组件",
@@ -30,19 +34,23 @@ var navs = [{
 	"children": [{
 		"title": "BTable",
 		"icon": "fa-table",
-		"href": "btable.html"
+		// "href": "btable.html"
+		"href": "../../demo/btable"
 	}, {
 		"title": "Navbar组件",
 		"icon": "fa-navicon",
-		"href": "navbar.html"
+		// "href": "navbar.html"
+		"href": "../../demo/navbar"
 	}, {
 		"title": "Tab组件",
 		"icon": "&#xe62a;",
-		"href": "tab.html"
+		// "href": "tab.html"
+		"href": "../../demo/tab"
 	}, {
 		"title": "Laytpl+Laypage",
 		"icon": "&#xe628;",
-		"href": "paging.html"
+		// "href": "paging.html"
+		"href": "../../demo/paging"
 	}]
 }, {
 	"title": "第三方组件",
@@ -51,7 +59,8 @@ var navs = [{
 	"children": [{
 		"title": "iCheck组件",
 		"icon": "fa-check-square-o",
-		"href": "icheck.html"
+		// "href": "icheck.html"
+		"href": "../../demo/icheck"
 	}]
 }, {
 	"title": "地址本",
@@ -88,6 +97,7 @@ var navs = [{
 	"children": [{
 		"title": "子窗体中打开选项卡",
 		"icon": "fa-github",
-		"href": "cop.html"
+		// "href": "cop.html"
+		"href": "../../demo/cop"
 	}]
 }];
