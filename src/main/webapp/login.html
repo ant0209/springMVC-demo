@@ -15,8 +15,7 @@
 		<h1>系统登录</h1>
 	</header>
 	<div class="beg-login-main">
-		<form class="layui-form">
-			<input name="__RequestVerificationToken" type="hidden" value="fkfh8D89BFqTdrE2iiSdG_L781RSRtdWOH411poVUWhxzA5MzI8es07g6KPYQh9Log-xf84pIR2RIAEkOokZL3Ee3UKmX0Jc8bW8jOdhqo81" />
+		<div class="layui-form" type="post">
 			<div class="layui-form-item">
 				<label class="beg-login-icon">
 					<i class="layui-icon">&#xe612;</i>
@@ -35,35 +34,39 @@
 					<input type="checkbox" name="rememberMe" value="true" lay-skin="switch" checked title="记住帐号">
 				</div>
 				<div class="beg-pull-right">
-					<button class="layui-btn layui-btn-primary" lay-submit lay-filter="login" id="loginBtn">登录
+					<button class="layui-btn layui-btn-primary" id="loginBtn">登录
 					</button>
 				</div>
 				<div class="beg-clear"></div>
 			</div>
-		</form>
+		</div>
 	</div>
 </div>
 <script type="text/javascript" src="../../static/plugins/layui/layui.js"></script>
 <script type="text/javascript">
-	layui.use(['layer', 'form'], function() {
+	layui.use(['layer'], function() {
 		var layer = layui.layer,
-				$ = layui.jquery,
-				form = layui.form();
+				$ = layui.jquery;
 		$('#loginBtn').on('click', function () {
 			var params = {};
 			params['name'] = '3333';
 			params['password'] = 'aaaaa';
-			$.post('../../admin/login', data, function (ret) {
-				if (ret.status == 1) {
-					location.href = '../../views/index';
-				}
-				else {
-					layer.alert(ret.msg);
+			$.ajax({
+				type : 'post',
+				url : '../../admin/login',
+				contentType : 'application/json;charset=utf-8',
+				data : JSON.stringify(params),
+				dataType : 'json',
+				success : function(ret) {
+					location.href = '../../views/demo/index';
+				},
+				error : function(msg) {
+					console.log('请求失败：' + JSON.stringify(msg));
+					layer.alert('请求失败!');
 				}
 			});
 		});
 	});
 </script>
 </body>
-
 </html>

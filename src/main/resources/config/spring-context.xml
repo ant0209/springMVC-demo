@@ -13,11 +13,44 @@
 	<!-- 配置扫描的包 -->
 	<context:component-scan base-package="cn.boy2b.module" />
 	<!-- 配置注解的处理器映射器和处理器适配器 -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+		<mvc:message-converters register-defaults="true">
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter4">
+				<property name="supportedMediaTypes">
+					<list>
+						<value>text/html;charset=UTF-8</value>
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+				<!--
+				<property name="fastJsonConfig">
+					<bean class="com.alibaba.fastjson.support.config.FastJsonConfig">
+						<property name="serializerFeatures">
+							<list>
+								<value>WriteNullListAsEmpty</value>
+								<value>WriteNullStringAsEmpty</value>
+								<value>WriteNullNumberAsZero</value>
+								<value>WriteNullBooleanAsFalse</value>
+							</list>
+						</property>
+						<property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"></property>
+					</bean>
+				</property>
+				-->
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 	<mvc:default-servlet-handler/>
 
 	<!--针对特殊的静态文件,可以增加mvc:resources的配置-->
 	<mvc:resources mapping="/demo/datas/**" location="/static/datas/" />
+
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/views/**"/>
+			<bean class="cn.boy2b.module.common.ViewInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
 
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
