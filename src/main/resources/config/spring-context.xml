@@ -45,13 +45,6 @@
 	<!--针对特殊的静态文件,可以增加mvc:resources的配置-->
 	<mvc:resources mapping="/demo/datas/**" location="/static/datas/" />
 
-	<mvc:interceptors>
-		<mvc:interceptor>
-			<mvc:mapping path="/views/**"/>
-			<bean class="cn.boy2b.module.common.ViewInterceptor"/>
-		</mvc:interceptor>
-	</mvc:interceptors>
-
 	<!-- 视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/"></property>
