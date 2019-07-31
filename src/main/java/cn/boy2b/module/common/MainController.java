@@ -14,7 +14,7 @@ public class MainController {
 
     @RequestMapping("/index")
     public ModelAndView index() {
-        return new ModelAndView("/index");
+        return new ModelAndView("index");
     }
 
     @RequestMapping("/m/login")
