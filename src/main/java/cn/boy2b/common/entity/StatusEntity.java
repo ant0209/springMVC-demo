@@ -1,4 +1,4 @@
-package cn.boy2b.module.common.entity;
+package cn.boy2b.common.entity;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -21,7 +21,7 @@ public class StatusEntity extends CreaterEntity {
     /**
      *@desc 更新人ID
      */
-    @Column(name = "update_user_id")
+    @Column(name = "update_user_id", length = 32)
     private String updateUserId;
 
     /**

@@ -1,4 +1,4 @@
-package cn.boy2b.module.sys.dao;
+package cn.boy2b.module.sys.mapper;
 
 import cn.boy2b.module.sys.vo.UserVO;
 

@@ -1,4 +1,4 @@
-package cn.boy2b.module.common.entity;
+package cn.boy2b.common.entity;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -13,7 +13,7 @@ public class BillEntity extends StatusEntity {
     /**
      *@desc 编号
      */
-    @Column(name = "number")
+    @Column(name = "number", length = 50)
     private String number;
 
     public String getNumber() {

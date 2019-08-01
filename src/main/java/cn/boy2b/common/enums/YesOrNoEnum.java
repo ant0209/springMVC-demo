@@ -1,4 +1,4 @@
-package cn.boy2b.module.common.enums;
+package cn.boy2b.common.enums;
 
 import cn.boy2b.common.BizException;
 

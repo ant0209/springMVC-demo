@@ -1,11 +1,8 @@
-package cn.boy2b.module.controller;
+package cn.boy2b.module.sys.controller;
 
 import cn.boy2b.module.BaseControllerTest;
 import cn.boy2b.module.sys.entity.UserEntity;
 import org.junit.Test;
-
-import java.util.HashMap;
-import java.util.Map;
 
 /**
  *@desc AdminControllerTest

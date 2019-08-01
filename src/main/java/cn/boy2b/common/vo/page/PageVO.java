@@ -1,4 +1,4 @@
-package cn.boy2b.common.vo;
+package cn.boy2b.common.vo.page;
 
 /**
  *@desc PageVO

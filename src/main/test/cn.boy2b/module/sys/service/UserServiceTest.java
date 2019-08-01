@@ -1,4 +1,4 @@
-package cn.boy2b.module.sys;
+package cn.boy2b.module.sys.service;
 
 import cn.boy2b.module.BaseTest;
 import cn.boy2b.module.sys.service.UserService;

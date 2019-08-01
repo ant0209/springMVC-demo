@@ -1,4 +1,8 @@
-package cn.boy2b.module.common.vo;
+package cn.boy2b.common.vo;
+
+import cn.boy2b.common.BizException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  *@desc ResultVO
@@ -9,6 +13,8 @@ public class ResultVO {
 
     public static final int SUCCESS = 1;
     public static final int FAIL = 0;
+
+    private static final Logger logger = LoggerFactory.getLogger(ResultVO.class);
 
     /**
      *@desc 返回状态。1:成功；0:失败
@@ -40,11 +46,21 @@ public class ResultVO {
     }
 
     public static ResultVO createSuccess() {
-        return new ResultVO(SUCCESS, null, null);
+        return createSuccess(null);
     }
 
     public static ResultVO createFail(String msg) {
         return new ResultVO(FAIL, msg, null);
+    }
+
+    public static ResultVO createFail(Exception e) {
+        if (e instanceof BizException) {
+            logger.error("业务异常", e);
+        }
+        else {
+            logger.error("系统异常", e);
+        }
+        return createFail(e.getMessage());
     }
 
     public int getStatus() {

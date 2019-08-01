@@ -1,6 +1,6 @@
 package cn.boy2b.module.bd.entity;
 
-import cn.boy2b.module.common.entity.BillEntity;
+import cn.boy2b.common.entity.BillEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

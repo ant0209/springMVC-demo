@@ -12,11 +12,20 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class MainController {
 
+    /**
+     *@desc 首页
+     */
     @RequestMapping("/index")
     public ModelAndView index() {
         return new ModelAndView("index");
     }
 
+    /**
+     *@desc 跳转到登录界面,这里的界面在WEB-INF/views下面
+     *@param 
+     *@author zhouwei
+     *@date 2019/8/1 10:53
+     */
     @RequestMapping("/m/login")
     public ModelAndView login() {
         return new ModelAndView("login");

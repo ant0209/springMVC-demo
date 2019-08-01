@@ -53,7 +53,7 @@
         <property name="mapperLocations" value="classpath*:cn/boy2b/module/*/mapper/*.xml"></property>
     </bean>
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-        <property name="basePackage" value="cn.boy2b.module.*.dao"/>
+        <property name="basePackage" value="cn.boy2b.module.*.mapper"/>
         <property name="sqlSessionFactoryBeanName" value="mybatisSessionFactory"></property>
     </bean>
 

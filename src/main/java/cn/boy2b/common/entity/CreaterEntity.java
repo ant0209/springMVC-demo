@@ -1,4 +1,4 @@
-package cn.boy2b.module.common.entity;
+package cn.boy2b.common.entity;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;
@@ -14,7 +14,7 @@ public class CreaterEntity extends IdEntity {
     /**
      *@desc 创建人ID
      */
-    @Column(name = "create_user_id")
+    @Column(name = "create_user_id", length = 32)
     private String createUserId;
     /**
      *@desc 创建时间

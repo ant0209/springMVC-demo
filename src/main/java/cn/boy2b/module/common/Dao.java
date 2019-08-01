@@ -1,11 +1,9 @@
 package cn.boy2b.module.common;
 
 import cn.boy2b.common.BizException;
-import cn.boy2b.module.common.entity.IdEntity;
-import cn.boy2b.module.common.entity.StatusEntity;
+import cn.boy2b.common.entity.IdEntity;
+import cn.boy2b.common.entity.StatusEntity;
 import org.apache.commons.lang.StringUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.orm.hibernate4.HibernateTemplate;
 import org.springframework.stereotype.Repository;
@@ -19,8 +17,6 @@ import java.util.Date;
  */
 @Repository
 public class Dao {
-
-    private Logger logger = LoggerFactory.getLogger(getClass());
 
     @Autowired
     private HibernateTemplate hibernateTemplate;

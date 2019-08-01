@@ -1,14 +1,15 @@
-/** index.js By Beginner Emain:zheng_jinfan@126.com HomePage:http://www.zhengjinfan.cn */
+/** user.js By Beginner Emain:zheng_jinfan@126.com HomePage:http://www.zhengjinfan.cn */
 
 var tab;
 
 layui.config({
     base: '../../static/js/',
     version: new Date().getTime()
-}).use(['element', 'layer', 'navbar', 'tab'], function () {
+}).use(['element', 'layer', 'navbar', 'tab', 'common'], function () {
     var element = layui.element(),
         $ = layui.jquery,
         layer = layui.layer,
+        common = layui.common,
         navbar = layui.navbar();
     tab = layui.tab({
         elem: '.admin-nav-card' //设置选项卡容器
@@ -57,6 +58,11 @@ layui.config({
             $(this).height($content.height());
         });
     }).resize();
+
+    //FIXME
+    // common.post('', null, function(){
+    //
+    // });
 
     //设置navbar
     navbar.set({

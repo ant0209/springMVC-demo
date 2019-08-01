@@ -6,6 +6,22 @@ layui.define(['layer'], function(exports) {
 		layer = layui.layer;
 
 	var common = {
+		post : function(url, params, successCall){
+			$.ajax({
+				type : 'post',
+				url : '../../' + url,
+				contentType : 'application/json;charset=utf-8',
+				data : JSON.stringify(params),
+				dataType : 'json',
+				success : function(ret) {
+					successCall(ret);
+				},
+				error : function(msg) {
+					console.log('请求失败：' + JSON.stringify(msg));
+				}
+			});
+		},
+
 		/**
 		 * 抛出一个异常错误信息
 		 * @param {String} msg

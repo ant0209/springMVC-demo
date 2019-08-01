@@ -1,6 +1,6 @@
 package cn.boy2b.module.sys.service;
 
-import cn.boy2b.module.sys.dao.UserMapper;
+import cn.boy2b.module.sys.mapper.UserMapper;
 import cn.boy2b.module.sys.vo.UserVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

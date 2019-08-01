@@ -1,6 +1,6 @@
 package cn.boy2b.module.bd.entity;
 
-import cn.boy2b.module.common.entity.StatusEntity;
+import cn.boy2b.common.entity.StatusEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

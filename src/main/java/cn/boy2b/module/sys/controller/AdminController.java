@@ -1,6 +1,6 @@
 package cn.boy2b.module.sys.controller;
 
-import cn.boy2b.module.common.vo.ResultVO;
+import cn.boy2b.common.vo.ResultVO;
 import cn.boy2b.module.sys.entity.UserEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;

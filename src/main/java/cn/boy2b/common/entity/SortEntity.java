@@ -1,4 +1,4 @@
-package cn.boy2b.module.common.entity;
+package cn.boy2b.common.entity;
 
 import javax.persistence.Column;
 import javax.persistence.MappedSuperclass;

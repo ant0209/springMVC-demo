@@ -1,4 +1,4 @@
-package cn.boy2b.module.common.entity;
+package cn.boy2b.common.entity;
 
 import org.hibernate.annotations.GenericGenerator;
 
@@ -16,7 +16,7 @@ import javax.persistence.MappedSuperclass;
 public class IdEntity {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", length = 32)
     @GenericGenerator(name = "id", strategy = "uuid")
     @GeneratedValue(generator = "id")
     private String id;

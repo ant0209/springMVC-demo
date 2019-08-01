@@ -1,6 +1,6 @@
 package cn.boy2b.module.sys.entity;
 
-import cn.boy2b.module.common.entity.SortEntity;
+import cn.boy2b.common.entity.SortEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

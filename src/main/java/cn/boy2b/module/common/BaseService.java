@@ -1,7 +1,7 @@
 package cn.boy2b.module.common;
 
 import cn.boy2b.common.BizException;
-import cn.boy2b.module.common.entity.IdEntity;
+import cn.boy2b.common.entity.IdEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
