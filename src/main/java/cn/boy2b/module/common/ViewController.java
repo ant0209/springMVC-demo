@@ -15,7 +15,7 @@ import java.util.Enumeration;
  *@date 2019/7/31 15:28
  */
 @Controller
-@RequestMapping("/views")
+@RequestMapping("/v")
 public class ViewController {
 
     @RequestMapping("/{module}/{html}")

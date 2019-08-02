@@ -56,7 +56,7 @@ public class FunctionControllerTest extends BaseControllerTest {
     public void test04_query() {
         FunctionQueryVO vo = new FunctionQueryVO();
         vo.setIndex(0);
-        vo.setPaseSize(5);
+        vo.setPageSize(5);
 
         String url = "/function/query";
         doPost(url, vo);

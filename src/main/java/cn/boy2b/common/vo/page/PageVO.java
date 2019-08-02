@@ -26,7 +26,7 @@ public class PageVO extends BasePageVO {
     }
 
     public int getTotalPage() {
-        int paseSize = getPaseSize();
+        int paseSize = getPageSize();
         totalPage = total / paseSize;
         if (total % paseSize > 0) {
             totalPage += 1;

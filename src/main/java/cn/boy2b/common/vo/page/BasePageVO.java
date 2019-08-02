@@ -15,7 +15,7 @@ public class BasePageVO {
     /**
      *@desc 每页显示的记录数
      */
-    private int paseSize = 10;
+    private int pageSize = 10;
 
     public int getIndex() {
         return index;
@@ -25,11 +25,11 @@ public class BasePageVO {
         this.index = index;
     }
 
-    public int getPaseSize() {
-        return paseSize;
+    public int getPageSize() {
+        return pageSize;
     }
 
-    public void setPaseSize(int paseSize) {
-        this.paseSize = paseSize;
+    public void setPageSize(int pageSize) {
+        this.pageSize = pageSize;
     }
 }

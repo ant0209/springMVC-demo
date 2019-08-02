@@ -19,7 +19,7 @@ public class PageResultVO extends PageVO {
 
     public PageResultVO(PageVO pageVO) {
         this.setIndex(pageVO.getIndex());
-        this.setPaseSize(pageVO.getPaseSize());
+        this.setPageSize(pageVO.getPageSize());
         this.setTotal(pageVO.getTotal());
     }
 

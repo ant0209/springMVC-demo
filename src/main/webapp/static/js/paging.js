@@ -109,37 +109,41 @@ layui.define(['layer', 'laypage', 'laytpl'], function (exports) {
             pageSize: _config.pageConfig.pageSize
         };
         $.extend(true, _config.params, df, options);
+
+        _config.params['index'] = 0;//FIXME 取页码
+        _config.params['paseSize'] = _config.pageConfig.pageSize;
         $.ajax({
             type: _config.type,
             url: _config.url,
-            data: _config.params,
+            data: JSON.stringify(_config.params),
+            contentType : 'application/json;charset=utf-8',
             dataType: 'json',
             success: function (result, status, xhr) {
                 if (loadIndex !== undefined)
                     layer.close(loadIndex); //关闭等待层
-                if (result.rel) {
+                if (result.status = 1) {
                     //获取模板
                     var tpl = _config.tempType === 0 ? $(_config.tempElem).html() : _config.tempElem;
                     //渲染数据
-                    laytpl(tpl).render(result, function (html) {
+                    laytpl(tpl).render(result.data, function (html) {
                         if (_config.renderBefore) {
                             _config.renderBefore(html, function (formatHtml) {
                                 $(_config.elem).html(formatHtml);
-                            }, result.list);
+                            }, result.data.list);
                         }
                         else {
                             $(_config.elem).html(html);
                         }
                     });
                     if (_config.paged) {
-                        if (result.count === null || result.count === undefined) {
+                        if (result.data.total === null || result.data.total === undefined) {
                             throwError('Paging Error:请返回数据总数！');
                             return;
                         }
                         var _pageConfig = _config.pageConfig;
                         var pageSize = _pageConfig.pageSize;
-                        var pages = result.count % pageSize == 0 ?
-                            (result.count / pageSize) : (result.count / pageSize + 1);
+                        var pages = result.data.total % pageSize == 0 ?
+                            (result.data.total / pageSize) : (result.data.total / pageSize + 1);
                         var defaults = {
                             cont: $(_pageConfig.elem),
                             curr: _config.params.pageIndex,

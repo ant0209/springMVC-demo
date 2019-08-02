@@ -2,7 +2,14 @@ var navs = [{
 	"title": "基本元素",
 	"icon": "fa-cubes",
 	"spread": true,
-	"children": [{
+	"children": [
+		{
+		"title": "功能管理",
+		"icon": "&#xe641;",
+		// "href": "button.html"
+		"href": "../../v/sys/function_list"
+	},
+		{
 		"title": "按钮",
 		"icon": "&#xe641;",
 		// "href": "button.html"
