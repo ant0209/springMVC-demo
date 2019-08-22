@@ -105,13 +105,16 @@ layui.define(['layer', 'laypage', 'laytpl'], function (exports) {
         }
         //默认参数
         var df = {
-            pageIndex: 1,
-            pageSize: _config.pageConfig.pageSize
+            pageIndex: options.pageIndex ? options.pageIndex : 1,//页码从1开始
+            pageSize: options.pageSize ? options.pageSize : _config.pageConfig.pageSize
         };
         $.extend(true, _config.params, df, options);
 
-        _config.params['index'] = 0;//FIXME 取页码
-        _config.params['paseSize'] = _config.pageConfig.pageSize;
+        if (options) {
+            for(var v in options) {
+                _config.params[v] = options[v];
+            }
+        }
         $.ajax({
             type: _config.type,
             url: _config.url,

@@ -8,21 +8,31 @@ package cn.boy2b.common.vo.page;
 public class BasePageVO {
 
     /**
-     *@desc 当前页索引值,从0开始
+     *@desc 当前页码,从1开始
      */
-    private int index = 0;
+    private int pageIndex = 1;
 
     /**
      *@desc 每页显示的记录数
      */
     private int pageSize = 10;
 
-    public int getIndex() {
-        return index;
+    /**
+     *@desc 当前页数据的起始索引值,从0开始
+     */
+    private int dataIndex = 0;
+
+    public int getDataIndex() {
+        dataIndex = (pageIndex - 1) * pageSize;
+        return dataIndex;
     }
 
-    public void setIndex(int index) {
-        this.index = index;
+    public int getPageIndex() {
+        return pageIndex;
+    }
+
+    public void setPageIndex(int pageIndex) {
+        this.pageIndex = pageIndex;
     }
 
     public int getPageSize() {

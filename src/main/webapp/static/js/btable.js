@@ -17,7 +17,7 @@ layui.define(['element', 'common', 'paging', 'form'], function (exports) {
             columns: [],//配置的数据列
             openWait: false,//是否打开等待框
             url: undefined, //数据源地址
-            type: 'GET', //读取方式
+            type: 'POST', //读取方式
             even: false, //是否开启偶数行背景
             skin: undefined, //风格样式 ，可选参数 line/row/nob
             field: 'ID', //主键属性名

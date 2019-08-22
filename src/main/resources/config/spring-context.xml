@@ -22,7 +22,6 @@
 						<value>application/json;charset=UTF-8</value>
 					</list>
 				</property>
-				<!--
 				<property name="fastJsonConfig">
 					<bean class="com.alibaba.fastjson.support.config.FastJsonConfig">
 						<property name="serializerFeatures">
@@ -31,12 +30,13 @@
 								<value>WriteNullStringAsEmpty</value>
 								<value>WriteNullNumberAsZero</value>
 								<value>WriteNullBooleanAsFalse</value>
+								<value>WriteNonStringValueAsString</value>
+								<value>WriteMapNullValue</value>
 							</list>
 						</property>
 						<property name="dateFormat" value="yyyy-MM-dd HH:mm:ss"></property>
 					</bean>
 				</property>
-				-->
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>

@@ -10,6 +10,7 @@ import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Date;
+import java.util.Random;
 
 /**
  *@desc FunctionControllerTest
@@ -55,10 +56,37 @@ public class FunctionControllerTest extends BaseControllerTest {
     @Test
     public void test04_query() {
         FunctionQueryVO vo = new FunctionQueryVO();
-        vo.setIndex(0);
+        vo.setPageIndex(0);
         vo.setPageSize(5);
+        vo.setSort("parentName");
+        vo.setOrder("asc");
 
         String url = "/function/query";
         doPost(url, vo);
+    }
+
+    @Test
+    public void test05_batchAdd() {
+        String url = "/function/add";
+        for (int i = 0; i < 10; i++) {
+            FunctionEntity entity = new FunctionEntity();
+            entity.setName(randomStr(5));
+            entity.setStatus(Math.round(new Random().nextInt(2)));
+            entity.setType(Math.round(new Random().nextInt(2)));
+            entity.setUri("/views/" + randomStr(6));
+            entity.setSortNum(Math.round(new Random().nextInt(99)));
+            doPost(url, entity);
+        }
+    }
+
+    private static final String CHARS = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    private String randomStr(int len) {
+        StringBuilder sb = new StringBuilder(len);
+        for (int i = 0; i < len; i++) {
+            int rn = Math.round(new Random().nextInt(CHARS.length()));
+            sb.append(CHARS.charAt(rn));
+        }
+        return sb.toString();
     }
 }

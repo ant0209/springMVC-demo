@@ -2,9 +2,10 @@ package cn.boy2b.module.sys.service;
 
 import cn.boy2b.common.vo.page.PageVO;
 import cn.boy2b.common.vo.page.PageResultVO;
-import cn.boy2b.module.sys.entity.FunctionEntity;
 import cn.boy2b.module.sys.mapper.FunctionMapper;
 import cn.boy2b.module.sys.vo.FunctionQueryVO;
+import cn.boy2b.module.sys.vo.FunctionVO;
+import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,7 +34,8 @@ public class FunctionService {
             int total = functionMapper.queryCount(vo);
             ret.setTotal(total);
         }
-        List<FunctionEntity> list = functionMapper.query(vo);
+        List<FunctionVO> list = functionMapper.query(vo);
+        System.out.println(JSON.toJSONString(list));
         ret.setList(list);
         return ret;
     }

@@ -1,7 +1,5 @@
 package cn.boy2b.common.vo.page;
 
-import cn.boy2b.common.vo.page.PageVO;
-
 import java.util.List;
 
 /**
@@ -18,7 +16,7 @@ public class PageResultVO extends PageVO {
     }
 
     public PageResultVO(PageVO pageVO) {
-        this.setIndex(pageVO.getIndex());
+        this.setPageIndex(pageVO.getPageIndex());
         this.setPageSize(pageVO.getPageSize());
         this.setTotal(pageVO.getTotal());
     }

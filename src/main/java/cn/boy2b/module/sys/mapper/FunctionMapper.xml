@@ -5,14 +5,22 @@
 
     <resultMap id="functionEntity" type="cn.boy2b.module.sys.entity.FunctionEntity"></resultMap>
 
-    <select id="query" parameterType="cn.boy2b.module.sys.vo.FunctionQueryVO" resultType="cn.boy2b.module.sys.entity.FunctionEntity">
-        select *
+    <select id="query" parameterType="cn.boy2b.module.sys.vo.FunctionQueryVO" resultType="cn.boy2b.module.sys.vo.FunctionVO">
+        select f.id,f.name,f.type,f.uri,f.parent_id parentId,f.status,p.name parentName
         from t_sys_function f
+        left join t_sys_function p on p.id = f.parent_id
         <where>
             <if test="parentId != null and parentId != ''">
               and f.parent_id = #{parentId}
             </if>
         </where>
+        <if test="orderBy == null or orderBy == ''">
+            order by f.sort_num
+        </if>
+        <if test="orderBy != null and orderBy != ''">
+            order by ${orderBy}
+        </if>
+        limit #{dataIndex}, #{pageSize}
     </select>
 
     <select id="queryCount" parameterType="cn.boy2b.module.sys.vo.FunctionQueryVO" resultType="int">

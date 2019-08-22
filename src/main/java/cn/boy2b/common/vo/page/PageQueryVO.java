@@ -1,6 +1,6 @@
 package cn.boy2b.common.vo.page;
 
-import cn.boy2b.common.vo.page.PageVO;
+import org.apache.commons.lang.StringUtils;
 
 /**
  *@desc 翻页查询条件基类
@@ -14,11 +14,45 @@ public class PageQueryVO extends PageVO {
      */
     private boolean queryTotal = true;
 
+    /**
+     *@desc 排序的字段名
+     */
+    private String sort = "";
+    /**
+     *@desc 排序方式:asc，desc
+     */
+    private String order = "";
+
+    private String orderBy = "";
+
     public boolean isQueryTotal() {
         return queryTotal;
     }
 
     public void setQueryTotal(boolean queryTotal) {
         this.queryTotal = queryTotal;
+    }
+
+    public String getOrder() {
+        return order;
+    }
+
+    public void setOrder(String order) {
+        this.order = order;
+    }
+
+    public String getSort() {
+        return sort;
+    }
+
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
+
+    public String getOrderBy() {
+        if (StringUtils.isNotBlank(sort)) {
+            orderBy = sort + " " + order;
+        }
+        return orderBy;
     }
 }

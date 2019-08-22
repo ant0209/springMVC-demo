@@ -1,7 +1,7 @@
 package cn.boy2b.module.sys.mapper;
 
-import cn.boy2b.module.sys.entity.FunctionEntity;
 import cn.boy2b.module.sys.vo.FunctionQueryVO;
+import cn.boy2b.module.sys.vo.FunctionVO;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ import java.util.List;
  */
 public interface FunctionMapper {
 
-    List<FunctionEntity> query(FunctionQueryVO vo);
+    List<FunctionVO> query(FunctionQueryVO vo);
 
     int queryCount(FunctionQueryVO vo);
 }

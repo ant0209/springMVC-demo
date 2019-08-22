@@ -1,81 +1,42 @@
 ﻿<!DOCTYPE html>
 <html>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>Table</title>
-		<link rel="stylesheet" href="../../static/plugins/layui/css/layui.css" media="all" />
-		<link rel="stylesheet" href="../../static/css/global.css" media="all">
-		<link rel="stylesheet" href="../../static/plugins/font-awesome/css/font-awesome.min.css">
-		<link rel="stylesheet" href="../../static/css/table.css" />
-	</head>
+<head>
+	<meta charset="utf-8">
+	<title>btable</title>
+	<meta name="renderer" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="format-detection" content="telephone=no">
 
-	<body>
-		<div class="admin-main">
+	<link rel="stylesheet" href="../../static/plugins/layui/css/layui.css" media="all" />
+	<link rel="stylesheet" href="../../static/plugins/font-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="../../static/css/btable.css" />
+</head>
 
-			<blockquote class="layui-elem-quote">
-				<a href="javascript:;" class="layui-btn layui-btn-small" id="add">
-					<i class="layui-icon">&#xe608;</i> 添加信息
-				</a>
-				<a href="#" class="layui-btn layui-btn-small" id="import">
-					<i class="layui-icon">&#xe608;</i> 导入信息
-				</a>
-				<a href="#" class="layui-btn layui-btn-small">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 导出信息
-				</a>
-				<a href="#" class="layui-btn layui-btn-small" id="getSelected">
-					<i class="fa fa-shopping-cart" aria-hidden="true"></i> 获取全选信息
-				</a>
-				<a href="javascript:;" class="layui-btn layui-btn-small" id="search">
-					<i class="layui-icon">&#xe615;</i> 搜索
-				</a>
-			</blockquote>
-			<!--
-			<fieldset class="layui-elem-field">
-				<legend>数据列表</legend>
-				-->
-				<div class="layui-field-box layui-form">
-					<table class="layui-table admin-table">
-						<thead>
-							<tr>
-								<!--<th style="width: 30px;"><input type="checkbox" lay-filter="allselector" lay-skin="primary"></th>-->
-								<th style="text-align: center;width:30px;">序号</th>
-								<th style="text-align: center;">姓名</th>
-								<th style="text-align: center;">年龄</th>
-								<th style="text-align: center;">创建时间</th>
-								<th style="text-align: center;">操作</th>
-							</tr>
-						</thead>
-						<tbody id="content">
-						</tbody>
-					</table>
+<body style=" background-color: gainsboro;">
+
+<div style="margin:0px; background-color: white; margin:0 10px;">
+	<blockquote class="layui-elem-quote">
+		<button type="button" class="layui-btn layui-btn-small" id="add"><i class="fa fa-plus" aria-hidden="true"></i>新增</button>
+		<form class="layui-form" style="float:right;">
+			<div class="layui-form-item" style="margin:0;">
+				<label class="layui-form-label">名称</label>
+				<div class="layui-input-inline">
+					<input type="text" name="name" placeholder="支持模糊查询.." autocomplete="off" class="layui-input">
 				</div>
-			<!--
-			</fieldset>
-			-->
-			<div class="admin-table-page">
-				<div id="paged" class="page">
+				<div class="layui-form-mid layui-word-aux" style="padding:0;">
+					<button lay-filter="search" class="layui-btn" lay-submit><i class="fa fa-search" aria-hidden="true"></i> 查询</button>
 				</div>
 			</div>
-		</div>
-		<!--模板-->
-		<script type="text/html" id="tpl">
-			{{# layui.each(d.list, function(index, item){ }}
-			<tr>
-				<!--<td><input type="checkbox" lay-skin="primary"></td>-->
-				<td>{{ index + 1 }}</td>
-				<td>{{ item.name }}</td>
-				<td>{{ item.age }}</td>
-				<td>{{ item.createtime }}</td>
-				<td>
-					<a href="/detail-1" target="_blank" class="layui-btn layui-btn-normal layui-btn-mini">预览</a>
-					<a href="javascript:;" data-name="{{ item.name }}" data-opt="edit" class="layui-btn layui-btn-mini">编辑</a>
-					<a href="javascript:;" data-id="1" data-opt="del" class="layui-btn layui-btn-danger layui-btn-mini">删除</a>
-				</td>
-			</tr>
-			{{# }); }}
-		</script>
-		<script type="text/javascript" src="../../static/plugins/layui/layui.js"></script>
-		<script type="text/javascript" src="../../static/module/sys/function_list.js"></script>
-	</body>
+		</form>
+	</blockquote>
+	<div id="content" style="width: 100%;height: 533px;"></div>
+</div>
+
+<script type="text/javascript" src="../../static/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="../../static/module/sys/function_list.js"></script>
+</body>
 </html>
