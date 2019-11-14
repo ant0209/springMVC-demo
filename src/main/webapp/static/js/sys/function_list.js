@@ -1,6 +1,4 @@
-layui.config({
-    base: '../../static/js/'
-}).use(['btable'], function () {
+layui.use(['btable', 'form'], function () {
     var btable = layui.btable(),
         $ = layui.jquery,
         layerTips = parent.layer === undefined ? layui.layer : parent.layer, //获取父窗口的layer对象

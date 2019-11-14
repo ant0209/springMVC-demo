@@ -6,8 +6,7 @@ var navs = [{
 		{
 		"title": "功能管理",
 		"icon": "&#xe641;",
-		// "href": "button.html"
-		"href": "../../v/sys/function_list"
+		"href": "../views/sys/function_list.html"
 	},
 		{
 		"title": "按钮",
